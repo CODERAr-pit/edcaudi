@@ -2,29 +2,109 @@
 <html lang="en">
 <head>
     <style>
-       h5{text-align:center;text-shadow: 2px 1px 2px white;}
+        h5{text-align:center;
+            text-shadow: 2px 1px 2px white;
+            position: absolute;
+            top: 23%;
+            left:22%
+            }
+        
+        body { background-color: rgb(51, 48, 45); 
+            display: flex; 
+            justify-content:center;
+            align-content: center;
+               }
+        
+               .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.5;
+        }
 
-        body { background-color: rgb(197, 139, 78); display: flex; justify-content:center; align-content: center; }
+        .bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .edc{
+            position:absolute;
+            top: 30%;
+            left: 60%;
+        }
+        .edc img{
+            opacity:.6;
+            width: 21rem;
+            height: 21rem;
+            border-radius: 2rem;
+        }
+       /* .edc:hover{
+            transform: rotate(35deg);
+        }*/
         
-        img { display: flex; justify-content: start; z-index: -1; width: 80%; position: absolute; }
-        
-        .data { border: 10px solid rgb(0, 0, 0); box-shadow: 3px 2px 16px 8px black; background-color: rgb(71, 97, 124); padding: 5px; display: flex; flex-direction: column;width: 400px; 
-       ;
-       opacity:0.9;
+        .data { border: 10px solid rgb(0, 0, 0); 
+            box-shadow: 3px 2px 16px 8px black;
+             background-color: rgb(42, 111, 120);
+              padding: 8px; 
+              display: flex;
+               flex-direction: column;
+               width: 400px; 
+               border: radius 5px;
+               opacity:0.9;
+               position: absolute;
+               top: 30%;
+               left: 17%;
+               border-radius: 5px;
+               
+               
        }
-     
+     .nit{
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        z-index: -1;
+     }
+     .nit img {
+        width: 150px;
+        transition: all 4s ease 1s;
+     }
+     .nit:hover{
+        scale: 1.4;
+     }
         
-        .div { align-items: center;border-radius:5px; }
+        .div { align-items: center;
+            border-radius:5px; }
         @keyframes right {
             from{top:0px;
-            left:-500px;}
-            to{top:30.600px;
-            left:80.200px;}}
+            left: -60%;}
+            to{top:17%;
+            left: 22%;}}
+            h2{
+                font-size: 50px;
+                color: black;
+                left: 5%;
+                top:10%;
+                width: 200px;           }
         
-            h1 {  text-shadow: 2px 2px 2px black;border: radius 5px;
-               position: relative;
-                animation: right 3s ease-in 0s 1 normal forwards;}
+            h1 {scale:1.3px;
+                color: blanchedalmond;
+                font-size: 50px;
+               border: radius 5px;
+               position: absolute;
+               animation: right 3s ease-in 0s 1 normal forwards;
+               text-shadow: 4px 3px 3px white;
+               font-size: 35px;}
+            h1:hover{
+                scale:1.3px;
+                color: rgb(0, 0, 0);
+                font-size: 43px;
+            }
             
+
 
 .detail {
     margin-top: 20px;
@@ -35,14 +115,16 @@ nav {
     display: flex;
     justify-content: center;
     gap: 20px;
+    position: absolute;
     margin-top: 20px;
+    margin-right: 15px;
 }
 
 nav a {
     text-decoration: none;
     color: white;
     font-size: 18px;
-    background-color: rgb(71, 97, 124);
+    background-color: rgb(6, 6, 6);
     padding: 10px 20px;
     border-radius: 5px;
     border: 2px solid white;
@@ -52,6 +134,7 @@ nav a {
 nav a:hover {
     background-color: white;
     color: rgb(71, 97, 124);
+    scale: 1.1;
 }
 button {
     background-color: rgb(71, 97, 124); 
@@ -71,18 +154,21 @@ button:hover {
 }
 
 button:active {
-    transform: scale(1); /* Reset size when clicked */
+    transform: scale(1); 
 }
-
+  
 
     </style>
     <title>MY EDC AUDITION PROJECT</title>
 </head>
 <body>
-    <img src="https://edcnitd.co.in/static/img/logo.png" alt="edc">
-    <form method="post">
-        <h1>EDC AUDITION</h1>
-        <h5>(to store data in database) </h5>
+   <div class="left"> <h1>EDC AUDITION</h1>
+    <h5>(to store data in database) </h5>
+   <div class="edc"><a href="https://edcnitd.co.in/"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFc5d7WyG1BPAy_ugu4wQi8lBg766JMyF-bMBW1j-tElzXvtdz8_85oGZrAF9Z8NTBH2c&usqp=CAU" alt="edc"></a></div>
+   <div class="bg"><img src="https://wallpaperaccess.com/full/4642744.jpg" alt="bg"></div>
+  <div class="nit"> <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/NIT_Durgapur_Logo.svg/800px-NIT_Durgapur_Logo.svg.png" alt="nit"></div>
+    <form onsubmit="myfunc(event)">
+        
         <div class="data">
             <label for="username">USERNAME:</label>
             <input type="text" name="username" id="username" placeholder="username">
@@ -101,11 +187,36 @@ button:active {
             <br>
             <button type="submit" >SUBMIT</button>
         </div>
-    </form>
+    </form></div>
+    <div class="right">
+        <img src="" alt="">
+    </div>
    <div class="detail"> <nav ><a href="https://edcnitd.co.in/" border:5px margin:3px>Edc Website</a>
      <a href="mailto:edc@nitdgp.ac.in" border:5px margin:3px;>Email us</a>
      <a href="https://edcnitd.co.in/team/" border:5px margin:3px>Our team</a>
     <a href="https://edcnitd.co.in/event/" >Event Reg.</a>
-    <a href="index2.html" >Me</a></nav></div>
-</body>
+    <a href="index.html2" >Me</a></nav></div>
+    <script type="text/javascript">
+        function myfunc(event){
+            event.preventDefault();
+   
+            var username=document.getElementById("username").value;
+            var password=document.getElementById("password").value;
+            var email=document.getElementById("email").value;
+            var phone=document.getElementById("phone").value;
+            var dob=document.getElementById("dob").value;
+    
+            localStorage.setItem('username',username);
+            localStorage.setItem('password',password);
+            localStorage.setItem('email',email);
+            localStorage.setItem('phone',phone);
+            localStorage.setItem('dob',dob);
+             alert("data submitted succesfully")
+             document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("dob").value = "";}
+            </script>*/
+    </body>
 </html>
